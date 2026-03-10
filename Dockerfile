@@ -1,0 +1,17 @@
+FROM node:20
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN node -e "const fs=require('fs');const p=require('./package.json');if(p.devDependencies && p.devDependencies['@web-bench/test-util']){delete p.devDependencies['@web-bench/test-util'];}fs.writeFileSync('package.json',JSON.stringify(p,null,2));" \
+    && npm install
+
+COPY . .
+
+ENV EVAL_PROJECT_ROOT=src
+ENV EVAL_PROJECT_PORT=3211
+
+EXPOSE 3211
+
+CMD ["bash", "-lc", "npx serve ${EVAL_PROJECT_ROOT:-src} -p ${EVAL_PROJECT_PORT:-3211}"]
