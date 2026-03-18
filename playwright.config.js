@@ -21,7 +21,7 @@ const { defineConfig, devices } = require('@playwright/test')
  */
 // require('dotenv').config({ path: path.resolve(__dirname, '.env') });
 const PROJECT_DIR = process.env.EVAL_PROJECT_ROOT || 'src'
-const PORT = process.env.EVAL_PROJECT_PORT || 3211
+const PORT = process.env.EVAL_PROJECT_PORT || 5173
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -45,7 +45,7 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: `http://127.0.0.1:${PORT}`,
+    baseURL: `http://localhost:${PORT}`,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     // headless: false,
@@ -53,7 +53,7 @@ module.exports = defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: {
     command: `npx serve ${PROJECT_DIR} -p ${PORT}`,
-    url: `http://127.0.0.1:${PORT}`,
+    url: `http://localhost:${PORT}`,
     reuseExistingServer: process.env.IS_EVAL_PRODUCTION ? false : true,
   },
 

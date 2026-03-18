@@ -1,0 +1,12 @@
+{
+  "name": "webbench-repo03-calculator-files-task01-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "npx serve . -p 5173"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

@@ -4,58 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Calculator</title>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <div class="calculator dark-mode scientific">
+    <div class="calculator">
       <input type="text" class="display" id="display" readonly />
       <div class="buttons">
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>/</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>*</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>-</button>
-        <button>0</button>
-        <button>.</button>
-        <button>=</button>
-        <button>+</button>
-        <button style="grid-column: span 3">Clear</button>
-        <button>√</button>
-        <button>^2</button>
-        <button>1/x</button>
-        <button>π</button>
-        <button>sin</button>
-        <button>cos</button>
-        <button>tan</button>
-        <button>sinh</button>
-        <button>cosh</button>
-        <button class="memory-btn">MR</button>
-        <button class="memory-btn">M+</button>
-        <button class="memory-btn">M-</button>
-        <button class="memory-btn">MC</button>
-      </div>
-
-      <div class="info-panels">
-        <div class="memory-panel">
-          <span>Memory</span>
-          <span id="memory">0</span>
-        </div>
-        <div class="clicks-panel">
-          <span>History</span>
-          <span id="clicks" class="clicks-history">&nbsp;</span>
-        </div>
+        <button onclick="calculate('7')">7</button>
+        <button onclick="calculate('8')">8</button>
+        <button onclick="calculate('9')">9</button>
+        <button onclick="calculate('/')">/</button>
+        <button onclick="calculate('4')">4</button>
+        <button onclick="calculate('5')">5</button>
+        <button onclick="calculate('6')">6</button>
+        <button onclick="calculate('*')">*</button>
+        <button onclick="calculate('1')">1</button>
+        <button onclick="calculate('2')">2</button>
+        <button onclick="calculate('3')">3</button>
+        <button onclick="calculate('-')">-</button>
+        <button onclick="calculate('0')">0</button>
+        <button onclick="calculate('.')">.</button>
+        <button onclick="calculate('=')">=</button>
+        <button onclick="calculate('+')">+</button>
+        <button onclick="calculate('C')" style="grid-column: span 4">Clear</button>
       </div>
     </div>
-
-    <button id="toggle">Light</button>
-    <button id="mode">Basic</button>
     <script src="./index.js"></script>
   </body>
 </html>
